@@ -1,0 +1,2 @@
+# partes-de-pc
+hardaware
