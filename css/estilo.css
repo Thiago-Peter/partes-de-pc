@@ -16,6 +16,33 @@ header {
     z-index: 1000;
 }
 
+.navbar {
+    background-color: #555;
+    position: fixed;
+    top: 40px;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 999;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 0 20px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
 nav {
     padding: 0;
     margin: 0;
@@ -41,10 +68,10 @@ nav ul li a {
 .sidebar {
     position: fixed;
     left: 0;
-    top: 50px;
+    top: 90px;
     width: 200px;
     height: 100%;
-    background-color: #003366; /* Azul escuro */
+    background-color: #003366;
     padding-top: 20px;
 }
 
@@ -66,8 +93,9 @@ nav ul li a {
 
 main {
     text-align: left;
-    padding: 60px 20px 0;
-    margin-left: 220px; /* Ajusta para não sobrepor a sidebar */
+    padding: 80px 20px 0;
+    margin-left: 220px;
+    margin-top: 20px;
 }
 
 footer {
