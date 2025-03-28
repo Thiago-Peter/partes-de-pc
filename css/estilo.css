@@ -10,16 +10,27 @@ header {
     color: white;
     text-align: left;
     padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    padding: 0;
+    margin: 0;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: left;
 }
 
 nav ul li {
-    display: grid;
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 nav ul li a {
@@ -27,16 +38,43 @@ nav ul li a {
     text-decoration: none;
 }
 
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 50px;
+    width: 200px;
+    height: 100%;
+    background-color: #444;
+    padding-top: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
 main {
     text-align: left;
-    padding: 0px;
+    padding: 60px 20px 0;
+    margin-left: 220px; /* Ajusta para não sobrepor a sidebar */
 }
 
 footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 1px;
+    padding: 10px;
     position: fixed;
     bottom: 0;
     width: 100%;
