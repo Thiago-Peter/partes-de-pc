@@ -1,0 +1,140 @@
+@font-face {
+    font-family: "cine";
+    src: url("fontes/cinedebarrio.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "mine";
+    src: url("fontes/minecraft.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "retro";
+    src: url("fontes/stocky.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --silver: rgb(240, 240, 240); 
+    --squirtle: #004488; 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(fundo/fundo.png);
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: cine, sans-serif;
+}
+
+header {
+    background-color: rgb(39, 39, 39);
+    color: var(--silver);
+    text-align: left;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    font-family: mine, sans-serif;
+}
+
+.navbar {
+    background-color: #444;
+    position: fixed;
+    top: 40px;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 999;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 0 20px;
+}
+
+.navbar ul li a {
+    color: var(--silver);
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav {
+    padding: 0;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: left;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: var(--silver);
+    text-decoration: none;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 90px;
+    width: 200px;
+    height: 100%;
+    background-color: rgba(0, 68, 136, 0.85);
+    padding-top: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+}
+
+.sidebar ul li a {
+    color: var(--silver);
+    text-decoration: none;
+    display: block;
+}
+
+main {
+    text-align: left;
+    padding: 80px 20px 0;
+    margin-left: 220px;
+    margin-top: 20px;
+}
+
+footer {
+    background-color: var(--squirtle);
+    color: var(--silver);
+    text-align: center;
+    padding: 1px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-family: retro, sans-serif;
+}
