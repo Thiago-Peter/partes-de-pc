@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>API Externa</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <script>
+        async function buscarPiada() {
+            const resposta = await fetch('https://v2.jokeapi.dev/joke/Any?lang=pt');
+            const dados = await resposta.json();
+            const piada = dados.type === "single" ? dados.joke : `${dados.setup} ... ${dados.delivery}`;
+            document.getElementById('piada').innerText = piada;
+        }
+    </script>
+</head>
+<body onload="buscarPiada()">
+    <header>
+        <h1>Exemplo de API</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="calculo_salario.html"><i class="fas fa-calculator"></i> Cálculo de Salário</a></li>
+                <li><a href="api_externa.html"><i class="fas fa-globe"></i> API Externa</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Piada Aleatória</h2>
+        <p id="piada">Carregando piada...</p>
+        <button onclick="buscarPiada()">Outra piada</button>
+    </main>
+</body>
+</html>

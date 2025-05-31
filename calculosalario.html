@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cálculo de Salário</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <script>
+        function calcularSalario() {
+            const nome = document.getElementById('nome').value;
+            const idade = parseInt(document.getElementById('idade').value);
+            const salarioBruto = parseFloat(document.getElementById('salario').value);
+            const dependentes = parseInt(document.getElementById('dependentes').value);
+
+            const bonus = idade > 50 ? 300 : 200;
+            const inss = salarioBruto * 0.08;
+            const vt = salarioBruto * 0.05;
+            const valorDependentes = dependentes * 50;
+
+            const salarioLiquido = salarioBruto - inss - vt + bonus + valorDependentes;
+
+            alert(
+                `Nome: ${nome}\n` +
+                `Dependentes: ${dependentes}\n` +
+                `Salário Bruto: R$ ${salarioBruto.toFixed(2)}\n` +
+                `INSS: R$ ${inss.toFixed(2)}\n` +
+                `Vale Transporte: R$ ${vt.toFixed(2)}\n` +
+                `Salário Líquido: R$ ${salarioLiquido.toFixed(2)}`
+            );
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Cálculo de Salário</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="calculo_salario.html"><i class="fas fa-calculator"></i> Cálculo de Salário</a></li>
+                <li><a href="api_externa.html"><i class="fas fa-globe"></i> API Externa</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form onsubmit="event.preventDefault(); calcularSalario();">
+            <label for="nome">Nome:</label><br>
+            <input type="text" id="nome" required><br><br>
+
+            <label for="idade">Idade:</label><br>
+            <input type="number" id="idade" required><br><br>
+
+            <label for="salario">Salário Bruto:</label><br>
+            <input type="number" id="salario" step="0.5" required><br><br>
+
+            <label for="dependentes">Número de Dependentes:</label><br>
+            <input type="number" id="dependentes" min="0" required><br><br>
+
+            <button type="submit">Calcular</button>
+        </form>
+    </main>
+</body>
+</html>
