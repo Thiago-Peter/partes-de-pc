@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>API Externa - Gatos</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Veja um Gato Aleatório 🐱</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="calculo_salario.html">Cálculo de Salário</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <button onclick="carregarImagem()">Mostrar Gato</button>
+        <div id="imagem" style="margin-top: 20px;"></div>
+    </main>
+
+    <script>
+        function carregarImagem() {
+            fetch("https://api.thecatapi.com/v1/images/search")
+                .then(res => res.json())
+                .then(data => {
+                    const imagemUrl = data[0].url;
+                    document.getElementById('imagem').innerHTML = `<img src="${imagemUrl}" alt="Gato" style="max-width: 400px;">`;
+                })
+                .catch(erro => {
+                    alert("Erro ao carregar imagem da API.");
+                    console.error(erro);
+                });
+        }
+    </script>
+</body>
+</html>
